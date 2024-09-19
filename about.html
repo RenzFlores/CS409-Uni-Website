@@ -10,36 +10,40 @@
       rel="stylesheet"
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous">
+    <link 
+      href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+      rel="stylesheet"  type='text/css'>
     <link
       href="style.css"
       rel="stylesheet">
   </head>
 
   <body>
-    <nav class="navbar px-3" style="background-color: rgb(255, 235, 50);">
-        <ul class="navbar-nav">
-            <li> 
-                <img src="logo.jpg" alt="logo" style="height: 50px; width: 50px;"></img>
-                <p>University Name</p> 
-            </li>
-            <li>
-                <div class="dropdown"><button
-                    class="btn btn-secondary" type="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    Icon
-                    <i class="fa-solid fa-bars"></i>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Home</a></li>
-                        <li><a class="dropdown-item" href="#">Join Us</a></li>
-                        <li><a class="dropdown-item" href="#">About</a></li>
-                    </ul>
-                </div>
-            </li>             
-        </ul>
+    <nav class="navbar navbar-expand-xs pb-0" style="background-color: rgb(255, 235, 50);">
+        <a href="" class="navbar-brand fs-4 ms-3">
+            <img class="p-1" src="logo.jpg" style="height: 80px;"></img>
+            University Name Here
+        </a>
+        <button class="navbar-toggler me-3" style="border: 0px;" type="button" data-bs-toggle="collapse" data-bs-target="#btn">
+            <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse bg-white" id="btn">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link mx-3 text-black">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link mx-3 text-black">Apply</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link mx-3 text-black">About</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
-    <div class="my-2 text-center">
-        <h2>About Us</h2>
+    <div class="mb-0 text-center" style="background-color: black;">
+        <h2 class="py-2 mb-0" style="color: white;">About Us</h2>
     </div>
 
     <div class="text-center">
@@ -92,15 +96,15 @@
         </p>
     </div>
 	
-	<div class="px-3" style="background-color: rgb(255, 235, 50);">
-		<h5 class="px-2 py-5" style="color: black; text-align: justify;">
+	<div class="px-3 py-5" style="background-color: rgb(255, 235, 50);">
+		<h4 class="px-2 py-5 mb-0" style="color: black; text-align: justify;">
             Contact us
-        </h5>
+        </h4>
 	</div>
 
 	<div class="text-center" style="background-color: black;">
-		<p class="px-3 py-2" style="font-size: 12px; color: gray">
-			This website is made as a project requirement in CS 409 - Mobile Computing.
+		<p class="px-3 py-2 mb-0" style="font-size: 12px; color: gray">
+			This website is made as a preliminary project requirement in CS 409 Mobile Computing.
 		</p>
 	</div>
 
