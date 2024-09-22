@@ -8,11 +8,28 @@ body {
 	background: white;
 }
 
-img {
-    max-width: 100%;
+.footer {
+    background-color: rgb(190, 0, 0); 
+    background-image: url('img/bg-logo-transparent.png');
+    background-position: right;
+    background-repeat: no-repeat;
 }
 
-i {
+.center-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/*
+.img {
+    max-width: 100%;
+}
+*/
+
+.i {
     scale: 1;
     filter: invert(100%);
 }
@@ -21,19 +38,19 @@ i {
     border: 0px;
 }
 
-fg-white {
+.fg-white {
     color: white;
 }
 
-fg-black {
+.fg-black {
     color: black;
 }
 
-bg-white {
+.bg-white {
     background-color: white;
 }
 
-bg-black {
+.bg-black {
     background-color: black;
 }
 
@@ -80,55 +97,15 @@ bg-black {
 .carousel-control-prev /*, .carousel-indicators */ {
     filter: invert(100%);
 }
-/*
-.navbar .getstarted {
-	background: #106eea;
-	margin-left: 30px;
-	border-radius: 4px;
-	font-weight: 400;
-	color: #fff;
-	text-decoration: none;
-	padding: .5rem 1rem;
-	line-height: 2.3;
-}
-.navbar-nav a {
-	font-size: 15px;
-	text-transform: uppercase;
-	font-weight: 500;
-}
-.navbar-light .navbar-brand {
-	color: #000;
-	font-size: 25px;
-	text-transform: uppercase;
-	font-weight: bold;
-	letter-spacing: 2px;
-}
-.navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
-	color: #000;
-}
-.navbar-light .navbar-nav .nav-link {
-	color: #000;
-}
-.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
-	color: #000;
-}
-*/
+
 .w-100 {
-	height: 100vh;
+	height: 70vh;
 }
-/*
-.navbar-toggler {
-	padding: 1px 5px;
-	font-size: 18px;
-	line-height: 0.3;
-	background: #fff;
-}
-*/
 
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 	.carousel-caption {
-		bottom: 370px;
+		bottom: 150px;
 	}
 	.carousel-caption p {
 		width: 100%;
@@ -146,19 +123,19 @@ bg-black {
 		text-align: center;
 	}
 	.carousel-caption {
-		bottom: 125px;
+		bottom: 150px;
 	}
 	.carousel-caption h5 {
-		font-size: 17px;
+		font-size: 16px;
 	}
 	.carousel-caption a {
 		padding: 10px 15px;
-		font-size: 15px;
+		font-size: 14px;
 	}
 	.carousel-caption p {
 		width: 100%;
 		line-height: 1.6;
-		font-size: 12px;
+		font-size: 11px;
 	}
 	.about-text {
 		padding-top: 50px;
