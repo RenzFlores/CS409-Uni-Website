@@ -8,8 +8,7 @@
 }
 
 img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 100%;   
 }
 
 text-white {
@@ -28,7 +27,7 @@ bg-white {
 	padding: 100px 0;
 }
 .carousel-item {
-	height: 100vh;
+	height: 50vh;
 	min-height: 300px;
 }
 .carousel-caption {

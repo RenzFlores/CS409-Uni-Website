@@ -15,6 +15,29 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-xs pb-0" style="background-color: rgb(255, 235, 50);">
+      <a href="" class="navbar-brand fs-4 ms-3">
+          <img class="p-1" src="logo.jpg" style="height: 80px;"></img>
+          University Name Here
+      </a>
+      <button class="navbar-toggler me-3" style="border: 0px;" type="button" data-bs-toggle="collapse" data-bs-target="#btn">
+          <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse bg-white" id="btn">
+          <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                  <a href="#" class="nav-link mx-3 text-black">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a href="#" class="nav-link mx-3 text-black">Apply</a>
+              </li>
+              <li class="nav-item">
+                  <a href="#" class="nav-link mx-3 text-black">About</a>
+              </li>
+          </ul>
+      </div>
+    </nav>
+
     <div class="carousel slide" data-bs-ride="carousel" id="carouselExampleIndicators">
       <div class="carousel-indicators">
         <button aria-label="Slide 1" class="active" data-bs-slide-to="0" data-bs-target="#carouselExampleIndicators" type="button"></button> <button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#carouselExampleIndicators" type="button"></button> <button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#carouselExampleIndicators" type="button"></button>
@@ -44,7 +67,14 @@
             <p><a class="btn btn-warning mt-3" href="#">Learn More</a></p>
           </div>
         </div>
-      </div><button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExampleIndicators" type="button"><span aria-hidden="true" class="carousel-control-prev-icon"></span> <span class="visually-hidden">Previous</span></button> <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExampleIndicators" type="button"><span aria-hidden="true" class="carousel-control-next-icon"></span> <span class="visually-hidden">Next</span></button>
+      </div>
+      <button class="carousel-control-prev text-white" data-bs-slide="prev" data-bs-target="#carouselExampleIndicators" type="button">
+        <span aria-hidden="true" class="carousel-control-prev-icon"></span> <span class="visually-hidden">Previous</span>
+      </button> 
+      <button class="carousel-control-next text-white" data-bs-slide="next" data-bs-target="#carouselExampleIndicators" type="button">
+        <span aria-hidden="true" class="carousel-control-next-icon"></span> 
+        <span class="visually-hidden">Next</span>
+      </button>
     </div><!-- about section starts -->
 
     <script
