@@ -7,11 +7,15 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+body {
+	background: white;
+}
+
 img {
     max-width: 100%;   
 }
 
-text-white {
+fg-white {
     color: white;
 }
 
@@ -39,12 +43,14 @@ bg-white {
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	margin-top: 25px;
+    color: white;
 }
 .carousel-caption p {
 	width: 60%;
 	margin: auto;
 	font-size: 18px;
 	line-height: 1.9;
+    color: white;
 }
 .carousel-inner:before {
 	content: '';
@@ -55,6 +61,10 @@ bg-white {
 	left: 0;
 	background: rgba(0, 0, 0, 0.7);
 	z-index: 1;
+}
+.carousel-control-next,
+.carousel-control-prev /*, .carousel-indicators */ {
+    filter: invert(100%);
 }
 .navbar .getstarted {
 	background: #106eea;
@@ -108,6 +118,7 @@ bg-white {
 .team .card-body i {
 	font-size: 20px;
 }
+
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 	.carousel-caption {
