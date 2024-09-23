@@ -29,89 +29,145 @@
       </button>
 
       <div class="collapse navbar-collapse bg-white" id="btn">
-          <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                  <a href="#" class="nav-link mx-3" style="color: black;">Home</a>
-              </li>
-              <li class="nav-item">
-                  <a href="#" class="nav-link mx-3" style="color: black;">Apply</a>
-              </li>
-              <li class="nav-item">
-                  <a href="#" class="nav-link mx-3" style="color: black;">About</a>
-              </li>
-          </ul>
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a href="home.html" class="nav-link mx-3 fg-black">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="registration.html" class="nav-link mx-3 fg-black">Apply</a>
+            </li>
+            <li class="nav-item">
+                <a href="about.html" class="nav-link mx-3 fg-black">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="login.html" class="nav-link mx-3 fg-black">Log in</a>
+            </li>
+        </ul>
       </div>
-  </nav>
+    </nav>
 
-    <div class="carousel slide carousel-dark" data-bs-ride="carousel" id="carouselIndicators">
-      <div class="carousel-indicators">
-        <button aria-label="Slide 1" class="active bg-white" data-bs-slide-to="0" data-bs-target="#carouselIndicators" type="button"></button> 
-        <button aria-label="Slide 2" class="bg-white" data-bs-slide-to="1" data-bs-target="#carouselIndicators" type="button"></button> 
-        <button aria-label="Slide 3" class="bg-white" data-bs-slide-to="2" data-bs-target="#carouselIndicators" type="button"></button>
-      </div>
+    <div id="carouselSlidesOnly" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="5000">
-          <img alt="..." class="d-block w-100" src="img/home-1.jpg">
+        <div class="carousel-item active">
+          <img src="img/home-poster.jpg" class="d-block w-100" alt="...">
           <div class="carousel-caption">
-            <h5>Your Dream House</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, nulla, tempore. Deserunt excepturi quas vero.</p>
-            
-          </div>
-        </div>
-        <div class="carousel-item" data-bs-interval="5000">
-          <img alt="..." class="d-block w-100" src="img/home-2.jpg">
-          <div class="carousel-caption">
-            <h5>Always Dedicated</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, nulla, tempore. Deserunt excepturi quas vero.</p>
-            <
-          </div>
-        </div>
-        <div class="carousel-item" data-bs-interval="5000">
-          <img alt="..." class="d-block w-100" src="img/home-3.jpg">
-          <div class="carousel-caption">
-            <h5>True Construction</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, nulla, tempore. Deserunt excepturi quas vero.</p>
-            
+            <h5>"Driven by curiosity, guided by innovation."</h5>
+            <p>
+              Motivated by inquisitiveness and directed by creativity, we enable learners to investigate and test limits. 
+              Curiosity drives discovery at Keenness Open-Quest University, resulting in game-changing inventions.
+            </p>
+            <button href="#" class="btn px-3 py-2 mt-4" style="background-color: rgb(190, 0, 0);">Apply now</button>
           </div>
         </div>
       </div>
-      <button class="carousel-control-prev fg-white" data-bs-slide="prev" data-bs-target="#carouselIndicators" type="button">
-        <span aria-hidden="true" class="carousel-control-prev-icon"></span> <span class="visually-hidden">Previous</span>
-      </button> 
-      <button class="carousel-control-next fg-white" data-bs-slide="next" data-bs-target="#carouselIndicators" type="button">
-        <span aria-hidden="true" class="carousel-control-next-icon"></span> 
-        <span class="visually-hidden">Next</span>
-      </button>
+    </div>
+
+    <!--
+    <div class="text-center bg-black">
+      <h4 class="py-2 mb-0" style="color: white">Keenness Open-Quest University</h4>
+    </div>
+    -->
+
+    <div class="p-3 my-1 fg-black">
+        <p class="body-text">
+          Keenness Open-Quest University cultivates an enriching environment for all students, 
+          enhancing the academic journeys of those who have a clear path while also offering guidance 
+          to those exploring their options. With a commitment to innovation and personal growth, 
+          the university empowers learners to pursue their passions and develop their skills without 
+          financial strain, creating a supportive community that values diverse educational experiences.
+        </p>
+    </div>
+
+    <div class="mx-3 text-center bg-black fg-white">
+        <h3>Mission</h3>
+    </div>
+
+    <div class="p-3 mb-1 fg-black">
+        <p class="px-1 body-text">
+          Giving unrivaled support and resources to help every student excel, fostering personal and intellectual development. 
+          Our open atmosphere fosters inquiry and creativity, enabling students to confidently manage their own college paths and achieve long-term success.
+        </p>
+    </div>
+
+    <div class="mx-3 text-center bg-black fg-white">
+        <h3 style="color: white;">Vision</h3>
+    </div>
+
+    <div class="p-3 mb-1 fg-black">
+        <p class="px-1 body-text">
+          To be a beacon of inspiration and innovation, nurturing a vibrant community of diverse learners who are empowered 
+          to make a meaningful impact in the world and excel in their ever-evolving journeys.
+        </p>
+    </div>
+
+    <div class="mx-3 text-center bg-black fg-white">
+        <h3 style="color: white;">Core Values</h3>
+    </div>
+
+    <div class="p-3 mb-1 fg-black">
+      <p class="px-1 body-text">
+        At Keenness Open-Quest University, our core values center on curiosity, innovation, and inclusivity.
+        We encourage students to explore diverse academic paths, think creatively, and collaborate in an inclusive environment. 
+        With a focus on adaptability, resilience, and excellence, we prepare students to face challenges with integrity and achieve their full potential.
+      </p>
+    </div>
+
+    <!--
+    <div class="filler"></div>
+    -->
+
+    <div class="py-3 mx-3 pb-4 fg-black">
+      <h3>Courses offered</h3>
+      <hr class="rounded me-5">
+      <p class="body-text">
+        Bachelor of Science in Medical Technology (BSMT)<br>
+        Bachelor of Science in Nursing (BSN)<br>
+        Bachelor of Science in Psychology (BS Psych)<br>
+        Bachelor of Science in Physical Therapy (BSPT)<br><br>
+
+        Bachelor of Science in Civil Engineering (BSCE)<br>
+        Bachelor of Science in Computer Engineering (BSCpE)<br>
+        Bachelor of Science in Mechanical Engineering (BSME)<br>
+        Bachelor of Science in Industrial Engineering (BSIE)<br><br>
+
+        Bachelor of Science in Information Technology (BSIT)<br>
+        Bachelor of Science in Computer Science (BSCS)<br>
+        Bachelor of Science in Information System (BSIS)<br>
+        Bachelor of Science in Data Science and Analytics (BSDSA)<br><br>
+
+        Bachelor of Science in Criminology  (BSCRIM)<br>
+        Bachelor of Science in in Business Administration (BSBA)<br>
+        Bachelor of Elementary Education (BEEd)<br>
+        Bachelor of Science in Tourism Management (BSTM)<br>
+      </p>
     </div>
 
     <div class="footer px-3 py-5">
-      <h4 class="px-0 py-2 mb-1" style="color: white; text-align: justify; font-weight: bolder;">
+      <h4 class="px-0 py-2 mb-1" style="color: white; text-align: justify; font-weight: bolder; font-size:20px">
           Contact us <br>
       </h4>
       <div class="mx-auto pb-2">
-          <p  style="color: white; text-align: left; text-size-adjust: 125;">
-              Keenness Open-Quest University (KOQU) <br>  
-              5342 Quest Lane St., Cubao, Quezon City <br>
-              Tel. No: (+632) 3344-9785
-          </p>
+        <p style="color: white; text-align: left; font-size: 13px">
+          Keenness Open-Quest University (KOQU) <br>  
+          5342 Quest Lane St., Cubao, Quezon City <br>
+          Tel. No: (+632) 3344-9785
+        </p>
       </div>
       <div class="mx-auto">
-          <p  style="color: white; text-align: left; text-size-adjust: 75;">
-              Email: <br>
-              explore@keenness.edu <br>
-              admission@keenness.edu <br>
-              support@keenness.edu 
-          </p>
+        <p style="color: white; text-align: left; font-size: 13px">
+          Email: <br>
+          explore@keenness.edu <br>
+          admission@keenness.edu <br>
+          support@keenness.edu 
+        </p>
       </div>
-  </div>
+    </div>
 
-<div class="text-center" style="background-color: black;">
-  <p class="px-3 py-2 mb-0" style="font-size: 12px; color: gray">
-    © Copyright 2024. Keenness Open-Quest University. All rights reserved. | Powered by Student Innovation Hub
-  </p>
-
-
-  </div>
+    <div class="text-center" style="background-color: black;">
+      <p class="px-3 py-2 mb-0" style="font-size: 12px; color: gray">
+        © Copyright 2024. Keenness Open-Quest University. All rights reserved. | Powered by Student Innovation Hub
+      </p>
+    </div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
