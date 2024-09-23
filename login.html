@@ -1,9 +1,10 @@
 <!doctype html>
-<html lang="en" data-bs-theme="light">
+<html lang="en" data-bs-theme="dark">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>About Us | Keenness Open-Quest University</title>
+    <title>University Name</title>
+    <script defer src="script.js"></script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -13,8 +14,8 @@
       href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
       rel="stylesheet"  type='text/css'>
     <link
-      href="style.css"
-      rel="stylesheet">
+        href="style.css"
+        rel="stylesheet">
   </head>
 
   <body>
@@ -37,45 +38,42 @@
                     <a href="registration.html" class="nav-link mx-3 fg-black">Apply</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link mx-3 fg-black">About</a>
+                    <a href="about.html" class="nav-link mx-3 fg-black">About</a>
                 </li>
                 <li class="nav-item">
-                    <a href="login.html" class="nav-link mx-3 fg-black">Log in</a>
+                    <a href="#" class="nav-link mx-3 fg-black">Log in</a>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <div class="center-screen">
-        <img src="img/about-campus-picture.jpg"></img>
+    <div class="form-bg">
+        <div class="container mx-auto py-3">
+            <div class="header mt-4">
+                <h3>Login</h3>
+                <hr class="rounded me-6">
+            </div>
+            <form id="form" class="form mb-4">
+                <div class="form-control">
+                    <label for="username">Username</label>
+                    <input type="text" placeholder="" id="username" />
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                <div class="form-control">
+                    <label for="password">Password</label>
+                    <input type="password" placeholder="" id="password"/>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                <button>Submit</button>
+            </form>
+        </div>
     </div>
 
-    <div class="py-4 mb-4 mx-3">
-        <h2>Our History</h2>
-        <hr class="rounded me-5">
-        <p style="font-size: 14px; text-align: justify;">
-            Keenness Open-Quest University was founded in 2010 by an individual who, like many students, once struggled to find the right academic path. 
-            Unsure of which direction to take, the founder realized that traditional education often lacked flexibility and support for students still exploring their options. 
-            Inspired by this personal journey, KOQU was created as a place where uncertainty is embraced and transformed into opportunity.
-
-            <br><br>
-
-            KOQU’s mission has always been to provide students with a range of choices, empowering them to discover their passions at their own pace. 
-            The university’s innovative programs are designed to accommodate both those with clear academic goals and those still searching for their calling. 
-            KOQU encourages students to explore multiple fields, unlocking their potential through personalized guidance, hands-on learning, and a supportive community.
-
-            <br><br>
-
-            Today, KOQU stands as a testament to the belief that every student deserves a chance to find their true path. 
-            By offering diverse opportunities and fostering a spirit of exploration, the university ensures that no student is left behind in their quest for success.
-
-            <br><br>
-
-            This history serves as a powerful reminder that uncertainty can lead to remarkable discoveries and growth, inspiring upcoming students to confidently embrace their college journey.
-        </p>
-    </div>
-	
-	<div class="footer px-3 py-5">
+    <div class="footer px-3 py-5">
         <h4 class="px-0 py-2 mb-1" style="color: white; text-align: justify; font-weight: bolder;">
             Contact us <br>
         </h4>
@@ -98,10 +96,11 @@
 
 	<div class="text-center" style="background-color: black;">
 		<p class="px-3 py-2 mb-0" style="font-size: 12px; color: gray">
-            © Copyright 2024. Keenness Open-Quest University. All rights reserved. | Powered by Student Innovation Hub
+			© Copyright 2024. Keenness Open-Quest University. All rights reserved. | Powered by Student Innovation Hub
 		</p>
 
 	</div>
+    
 
     <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

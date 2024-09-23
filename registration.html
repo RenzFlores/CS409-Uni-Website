@@ -21,7 +21,7 @@
   <body>
     <nav class="navbar navbar-expand-xs" style="background-color: rgb(190, 0, 0);">
         <a href="" class="navbar-brand ms-1" style="color: white; font-size: 16px; font-weight: bold;" >
-            <img class="p-1" src="img/logo.jpg" style="height: 50px;"></img>
+            <img class="p-1" src="img/navbar-logo.png" style="height: 50px;"></img>
             Keenness Open-Quest University
         </a>
      
@@ -47,70 +47,72 @@
         </div>
     </nav>
 
-    <div class="container py-3">
-        <div class="header mt-4">
-            <h3>Create Account</h3>
-            <hr class="rounded me-6">
+    <div class="form-bg">
+        <div class="container py-3">
+            <div class="header mt-4">
+                <h3>Create Account</h3>
+                <hr class="rounded me-6">
+            </div>
+            <form id="form" class="form mb-4">
+                <div class="form-control">
+                    <label for="username">Name</label>
+                    <input type="text" placeholder="John Doe" id="name"/>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                <div class="form-control">
+                    <label for="username">Birthdate</label>
+                    <input type="date" placeholder="" id="birthdate"/>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                <div class="form-control">
+                    <label for="username">Contact number</label>
+                    <input type="number" placeholder="+63" id="contactnum"/>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                <div class="form-control">
+                    <label for="lastschool">Last School Attended</label>
+                    <input type="text" placeholder="" id="lastschool"/>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                <div class="form-control">
+                    <label for="username">Username</label>
+                    <input type="text" placeholder="" id="username" />
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                <div class="form-control">
+                    <label for="email">Email</label>
+                    <input type="email" placeholder="a@email.com" id="email" />
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                <div class="form-control">
+                    <label for="password">Password</label>
+                    <input type="password" placeholder="" id="password"/>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                <div class="form-control">
+                    <label for="password2">Re-enter password</label>
+                    <input type="password" placeholder="" id="password2"/>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                <button>Submit</button>
+            </form>
         </div>
-        <form id="form" class="form mb-4">
-            <div class="form-control">
-                <label for="username">Name</label>
-                <input type="text" placeholder="John Doe" id="name"/>
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error message</small>
-            </div>
-            <div class="form-control">
-                <label for="username">Birthdate</label>
-                <input type="date" placeholder="" id="birthdate"/>
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error message</small>
-            </div>
-            <div class="form-control">
-                <label for="username">Contact number</label>
-                <input type="number" placeholder="+63" id="contactnum"/>
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error message</small>
-            </div>
-            <div class="form-control">
-                <label for="lastschool">Last School Attended</label>
-                <input type="text" placeholder="" id="lastschool"/>
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error message</small>
-            </div>
-            <div class="form-control">
-                <label for="username">Username</label>
-                <input type="text" placeholder="" id="username" />
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error message</small>
-            </div>
-            <div class="form-control">
-                <label for="email">Email</label>
-                <input type="email" placeholder="a@email.com" id="email" />
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error message</small>
-            </div>
-            <div class="form-control">
-                <label for="password">Password</label>
-                <input type="password" placeholder="" id="password"/>
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error message</small>
-            </div>
-            <div class="form-control">
-                <label for="password2">Re-enter password</label>
-                <input type="password" placeholder="" id="password2"/>
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error message</small>
-            </div>
-            <button>Submit</button>
-        </form>
     </div>
 
     <div class="footer px-3 py-5">

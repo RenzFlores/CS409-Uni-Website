@@ -5,7 +5,13 @@
 }
 
 body {
-	background: white;
+    background: white;
+}
+
+.form-bg {
+	background: rgb(192, 192, 192);
+    padding-top: 10vh;
+    padding-bottom: 10vh;
 }
 
 .footer {
@@ -93,7 +99,7 @@ hr.rounded {
 	background-color: #fff;
 	border-radius: 5px;
 	overflow: hidden;
-	width: 800px;
+	width: 50vw;
 	max-width: 100%;
 }
 
