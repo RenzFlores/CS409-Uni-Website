@@ -5,7 +5,7 @@
 }
 
 body {
-	background: rgb(192, 192, 192);
+	background: white;
 }
 
 .footer {
@@ -189,4 +189,41 @@ hr.rounded {
 	padding: 10px;
 	margin-top: 20px;
 	width: 100%;
+}
+
+/* CUSTOM WIDTHS */
+.w-80, .w-xs-80 { width: 80%!important; }
+
+/* BREAKPOINTS */
+
+/* XS breakpoint */
+@media (max-width: 575px) {
+    /* CUSTOM WIDTHS */
+    .w-80 { width: 95%!important; }
+    .body-text { font-size: 1.88vh; line-height: 2; }
+}
+
+/* SM breakpoint */
+@media (min-width: 576px max-width: 767px) {
+    /* CUSTOM WIDTHS */
+    .w-sm-10 { width: 10%!important; }
+    .w-sm-15 { width: 15%!important; }
+    .w-80 { width: 95%!important; }
+    .body-text { font-size: 1.88vh; line-height: 1; }
+}
+
+/* MD breakpoint*/
+@media (min-width: 768px) {
+    /* CUSTOM WIDTHS */
+    .w-md-10 { width: 10%!important; }
+    .w-md-15 { width: 15%!important; }
+    .w-80 { width: 90%!important; }
+    .body-text { font-size: 2vh; line-height: 2; }
+}
+
+/* LG breakpoint */
+@media (min-width: 992px) {
+    /* CUSTOM WIDTHS */
+    .w-80 { width: 80%!important; }
+    .body-text { font-size: 2.5vh; line-height: 2.5; }
 }
