@@ -1,3 +1,14 @@
+/*
+
+POSSIBLE SOLUTION:
+Local Storage and JSON.stringify
+
+- All user data is stored inside local storage as one very long concatenated string
+- Each time a page is loaded, all data is retrieved from local storage and parsed into objects
+- Each time a new user registers, local storage is updated by encoding all objects into json strings and the page is reloaded
+
+*/
+
 const loginform = document.getElementById('loginform');
 const regform = document.getElementById('regform');
 const name = document.getElementById('name');
@@ -11,6 +22,12 @@ const password2 = document.getElementById('password2');
 
 let db;
 const request = indexedDB.open("UserDatabase", 1);
+
+let transaction = db.transaction(["Users"], "readonly"); 
+let users = transaction.objectStore("Users");
+let request = users.getAll();
+let isUserFound = false;
+let userID = 0;
 
 var currentUser = null;
 
@@ -57,11 +74,11 @@ try {
         e.preventDefault();
 
         if (checkLoginInputs()) {
-            result = authenticateLogin();
-            console.log(result);
-            if (result !== undefined) {
-                window.alert("Welcome " + (result.name) + "!");
-                currentUser = result;
+            tempUser = authenticateLogin();
+
+            if (tempUser !== undefined) {
+                window.alert("Welcome " + (tempUser.name) + "!");
+                currentUser = tempUser;
             } else {
                 window.alert("Incorrect username or password.");
             }
@@ -117,27 +134,7 @@ function saveUser(userObject) {
     };
 }
 
-function authenticateLogin() {
-    let transaction = db.transaction(["Users"], "readonly"); 
-    let users = transaction.objectStore("Users");
-    let request = users.getAll();
-
-    request.onsuccess = function() {
-        if (request.result !== undefined) { 
-            for (var i = 0; i < request.result.length; i++) {
-                if (matchRecords(request.result[i])) {
-                    console.log("User found");
-                    return request.result[i];    // User is found
-                }
-            }
-            console.log("User not found");
-            return null;
-        } else { 
-            console.log("User database is empty.");
-            return null;
-        }
-    };
-
+async function authenticateLogin() {
     function matchRecords(user) {
         if (user.username.localeCompare(document.getElementById("username").value) === 0) {
             //console.log("Username matched.");
@@ -155,6 +152,28 @@ function authenticateLogin() {
 
         return true;
     }
+
+    request.onsuccess = function() {
+        if (request.result !== undefined) { 
+            for (var i = 0; i < request.result.length; i++) {
+                if (matchRecords(request.result[i])) {
+                    console.log("User found");
+                    userID = i;
+                }
+            }
+            console.log("User not found");
+        } else { 
+            console.log("User database is empty.");
+        }
+    };
+
+    /*
+    if (isUserFound) {    
+        return request.result[i];
+    } else {
+        return null;
+    }
+    */
 }
 
 function checkRegInputs() {
