@@ -1,14 +1,3 @@
-/*
-
-POSSIBLE SOLUTION:
-Local Storage and JSON.stringify
-
-- All user data is stored inside local storage as one very long concatenated string
-- Each time a page is loaded, all data is retrieved from local storage and parsed into objects
-- Each time a new user registers, local storage is updated by encoding all objects into json strings and the page is reloaded
-
-*/
-
 const loginform = document.getElementById('loginform');
 const regform = document.getElementById('regform');
 const name = document.getElementById('name');
@@ -20,31 +9,7 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
 
-let db;
-const request = indexedDB.open("UserDatabase", 1);
-
-let transaction = db.transaction(["Users"], "readonly"); 
-let users = transaction.objectStore("Users");
-let request = users.getAll();
-let isUserFound = false;
-let userID = 0;
-
-var currentUser = null;
-
-request.onupgradeneeded = function(event) {
-    db = event.target.result;
-    // Create an object store for this database if it doesn't already exist
-    const objectStore = db.createObjectStore("Users", { keyPath: "id", autoIncrement: true});
-};
-
-request.onsuccess = function(event) {
-    db = event.target.result;
-    console.log("Database opened successfully");
-};
-
-request.onerror = function(event) {
-    console.error("Database error: ", event.target.errorCode);
-};
+var userArray = [];
 
 var userObject = {
     name: "",
@@ -55,6 +20,8 @@ var userObject = {
     email: "",
     password: ""
 }
+
+loadUsers();
 
 try {
     regform.addEventListener('submit', e => {
@@ -76,9 +43,8 @@ try {
         if (checkLoginInputs()) {
             tempUser = authenticateLogin();
 
-            if (tempUser !== undefined) {
+            if (tempUser !== null) {
                 window.alert("Welcome " + (tempUser.name) + "!");
-                currentUser = tempUser;
             } else {
                 window.alert("Incorrect username or password.");
             }
@@ -107,73 +73,65 @@ function addUser() {
     newUser.username = username.value.trim();
     newUser.email = email.value.trim();
     newUser.password = password.value.trim();
-    saveUser(newUser);
+    userArray.push(newUser);
+    saveUsers();
     console.log("User successfully added.");
 }
 
-function saveUser(userObject) {
-    const transaction = db.transaction(["Users"], "readwrite");
-    const objectStore = transaction.objectStore("Users");
+function loadUsers() {
+    userArray = [];
+    let dataArray = localStorage.getItem("users");
 
-    /*
-    try {
-        const request = objectStore.put(userObject);
-    } catch(DataError) {
-        const request = objectStore.put({name: "test", password: "testpass", id: 1});
+    if (dataArray !== null) {
+        dataArray = dataArray.split("||");
+        for (let i = 0; i < dataArray.length-1; i++) {
+            console.log(dataArray[i]);
+            let parsedData = JSON.parse(dataArray[i]);
+
+            userArray.push(parsedData);
+        }
+        console.log(userArray.length);
     }
-    */
-
-    const request = objectStore.put(userObject);
-
-    request.onsuccess = function() {
-        console.log("Object saved successfully");
-    };
-
-    request.onerror = function() {
-        console.error("Error saving object");
-    };
 }
 
-async function authenticateLogin() {
+function saveUsers() {
+    let userString = "";
+
+    for (let i = 0; i < userArray.length; i++) {
+        userString = userString.concat(JSON.stringify(userArray[i]) + ("||"));
+        console.log(userString);
+    }
+
+    localStorage.setItem("users", userString);
+}
+
+function authenticateLogin() {
     function matchRecords(user) {
         if (user.username.localeCompare(document.getElementById("username").value) === 0) {
-            //console.log("Username matched.");
+            console.log("Username matched.");
         } else { 
-            //console.log("Username not found.");
+            console.log("Username not found.");
             return false;
         }
 
         if (user.password.localeCompare(document.getElementById("password").value) === 0) {
-            //console.log("Password matched.");
-        } else { 
-            //console.log("Password not found.");
+            console.log("Password matched.");
+        } else {
+            console.log("Password not found.");
             return false;
         }
 
         return true;
     }
 
-    request.onsuccess = function() {
-        if (request.result !== undefined) { 
-            for (var i = 0; i < request.result.length; i++) {
-                if (matchRecords(request.result[i])) {
-                    console.log("User found");
-                    userID = i;
-                }
-            }
-            console.log("User not found");
-        } else { 
-            console.log("User database is empty.");
+    for (var i = 0; i < userArray.length; i++) {
+        if (matchRecords(userArray[i])) {
+            console.log("User found");
+            return userArray[i];
         }
-    };
-
-    /*
-    if (isUserFound) {    
-        return request.result[i];
-    } else {
-        return null;
     }
-    */
+    console.log("User not found");
+    return null;
 }
 
 function checkRegInputs() {
