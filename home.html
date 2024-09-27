@@ -18,33 +18,33 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-xs" style="background-color: rgb(190, 0, 0);">
-      <a href="" class="navbar-brand ms-1" style="color: white; font-size: 16px; font-weight: bold;" >
-          <img class="p-1" src="img/logo.jpg" style="height: 50px;"></img>
+    <nav class="navbar navbar-expand-xs">
+      <a href="home.html" class="navbar-brand ms-1">
+          <img class="p-1" src="img/navbar-logo.png"></img>
           Keenness Open-Quest University
       </a>
    
-      <button class="navbar-toggler me-1" style="" type="button" data-bs-toggle="collapse" data-bs-target="#btn">
+      <button class="navbar-toggler me-1" type="button" data-bs-toggle="collapse" data-bs-target="#btn">
           <i class="fa fa-bars"></i>
       </button>
 
       <div class="collapse navbar-collapse bg-white" id="btn">
-        <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-                <a href="home.html" class="nav-link mx-3 fg-black">Home</a>
-            </li>
-            <li class="nav-item">
-                <a href="registration.html" class="nav-link mx-3 fg-black">Apply</a>
-            </li>
-            <li class="nav-item">
-                <a href="about.html" class="nav-link mx-3 fg-black">About</a>
-            </li>
-            <li class="nav-item">
-                <a href="login.html" class="nav-link mx-3 fg-black">Log in</a>
-            </li>
-        </ul>
+          <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                  <a href="home.html" class="nav-link mx-3 fg-black">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a href="registration.html" class="nav-link mx-3 fg-black">Apply</a>
+              </li>
+              <li class="nav-item">
+                  <a href="about.html" class="nav-link mx-3 fg-black">About</a>
+              </li>
+              <li class="nav-item">
+                  <a href="login.html" class="nav-link mx-3 fg-black">Log in</a>
+              </li>
+          </ul>
       </div>
-    </nav>
+    </nav>  <!--END OF NAVBAR-->
 
     <div id="carouselSlidesOnly" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
@@ -56,20 +56,16 @@
               Motivated by inquisitiveness and directed by creativity, we enable learners to investigate and test limits. 
               Curiosity drives discovery at Keenness Open-Quest University, resulting in game-changing inventions.
             </p>
-            <button href="#" class="btn px-3 py-2 mt-4" style="background-color: rgb(190, 0, 0);">Apply now</button>
+            <form>
+              <button formaction="registration.html">Apply now</button>
+            </form>
           </div>
         </div>
       </div>
-    </div>
+    </div>  <!--END OF CAROUSEL-->
 
-    <!--
-    <div class="text-center bg-black">
-      <h4 class="py-2 mb-0" style="color: white">Keenness Open-Quest University</h4>
-    </div>
-    -->
-
-    <div class="mx-auto p-3 my-2 w-80 fg-black">
-        <p class="body-text">
+    <div class="mx-auto p-3 my-2 w-res fg-black">
+        <p class="body-text" style="text-align: justify;">
           Keenness Open-Quest University cultivates an enriching environment for all students, 
           enhancing the academic journeys of those who have a clear path while also offering guidance 
           to those exploring their options. With a commitment to innovation and personal growth, 
@@ -78,36 +74,36 @@
         </p>
     </div>
 
-    <div class="mx-auto mx-4 text-center bg-black fg-white">
+    <div class="mx-auto w-res text-center bg-black fg-white">
         <h3 style="font-weight:bold; font-family:sans-serif; color: white;">
           Mission</h3>
     </div>
 
-    <div class="mx-auto p-3 mb-1 w-80 fg-black">
+    <div class="mx-auto p-3 mb-1 w-res fg-black">
         <p class="px-1 body-text">
           Giving unrivaled support and resources to help every student excel, fostering personal and intellectual development. 
           Our open atmosphere fosters inquiry and creativity, enabling students to confidently manage their own college paths and achieve long-term success.
         </p>
     </div>
 
-    <div class="mx-auto mx-3 text-center bg-black fg-white">
+    <div class="mx-auto w-res text-center bg-black fg-white">
         <h3 style="color: white; font-weight:bold; font-family: sans-serif">
           Vision</h3>
     </div>
 
-    <div class="mx-auto p-3 mb-1 w-80 fg-black">
+    <div class="mx-auto p-3 mb-1 w-res fg-black">
         <p class="px-1 body-text">
           To be a beacon of inspiration and innovation, nurturing a vibrant community of diverse learners who are empowered 
           to make a meaningful impact in the world and excel in their ever-evolving journeys.
         </p>
     </div>
 
-    <div class="mx-auto mx-3 text-center bg-black fg-white">
+    <div class="mx-auto w-res text-center bg-black fg-white">
         <h3 style="color: white; font-weight: bold; font-family: sans-serif;">
           Core Values</h3>
     </div>
 
-    <div class=" mx-auto p-3 mb-1 w-80 fg-black">
+    <div class="mx-auto p-3 mb-1 w-res fg-black">
       <p class="px-1 body-text">
         At Keenness Open-Quest University, our core values center on curiosity, innovation, and inclusivity.
         We encourage students to explore diverse academic paths, think creatively, and collaborate in an inclusive environment. 
@@ -119,10 +115,10 @@
     <div class="filler"></div>
     -->
 
-    <div class="py-3 mx-3 pb-4 fg-black">
+    <div class="mx-auto w-res py-3 mx-3 pb-4 fg-black">
       <h3>Courses offered</h3>
       <hr class="mx-auto rounded me-5">
-      <p class=" mx-auto body-text">
+      <p class="ps-3 body-text" style="text-align: left;">
         Bachelor of Science in Medical Technology (BSMT)<br>
         Bachelor of Science in Nursing (BSN)<br>
         Bachelor of Science in Psychology (BS Psych)<br>
@@ -146,25 +142,25 @@
     </div>
 
     <div class="footer px-3 py-5">
-      <h4 class="px-0 py-2 mb-1" style="color: white; text-align: justify; font-weight: bolder; font-size:20px">
+      <h4 class="px-0 py-2 mb-1" style="color: white; text-align: justify; font-weight: bolder;">
           Contact us <br>
       </h4>
       <div class="mx-auto pb-2">
-        <p style="color: white; text-align: left; font-size: 13px">
-          Keenness Open-Quest University (KOQU) <br>  
-          5342 Quest Lane St., Cubao, Quezon City <br>
-          Tel. No: (+632) 3344-9785
-        </p>
+          <p class="body-text" style="color: white; text-align: left;">
+              Keenness Open-Quest University (KOQU) <br>  
+              5342 Quest Lane St., Cubao, Quezon City <br>
+              Tel. No: (+632) 3344-9785
+          </p>
       </div>
       <div class="mx-auto">
-        <p style="color: white; text-align: left; font-size: 13px">
-          Email: <br>
-          explore@keenness.edu <br>
-          admission@keenness.edu <br>
-          support@keenness.edu 
-        </p>
+          <p class="body-text" style="color: white; text-align: left;">
+              Email: <br>
+              explore@keenness.edu <br>
+              admission@keenness.edu <br>
+              support@keenness.edu 
+          </p>
       </div>
-    </div>
+  </div>
 
     <div class="text-center" style="background-color: black;">
       <p class="px-3 py-2 mb-0" style="font-size: 12px; color: gray; font-style: italic;">
@@ -177,4 +173,4 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"></script>
   </body>
-</html>
+</html> 

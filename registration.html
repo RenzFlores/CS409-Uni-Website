@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>University Name</title>
+    <title>Registration | Keenness Open-Quest University</title>
     <script defer src="script.js"></script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -19,13 +19,13 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-xs" style="background-color: rgb(190, 0, 0);">
-        <a href="" class="navbar-brand ms-1" style="color: white; font-size: 16px; font-weight: bold;" >
-            <img class="p-1" src="img/logo.jpg" style="height: 50px;"></img>
+    <nav class="navbar navbar-expand-xs">
+        <a href="home.html" class="navbar-brand ms-1">
+            <img class="p-1" src="img/navbar-logo.png"></img>
             Keenness Open-Quest University
         </a>
      
-        <button class="navbar-toggler me-1" style="" type="button" data-bs-toggle="collapse" data-bs-target="#btn">
+        <button class="navbar-toggler me-1" type="button" data-bs-toggle="collapse" data-bs-target="#btn">
             <i class="fa fa-bars"></i>
         </button>
 
@@ -35,7 +35,7 @@
                     <a href="home.html" class="nav-link mx-3 fg-black">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link mx-3 fg-black">Apply</a>
+                    <a href="registration.html" class="nav-link mx-3 fg-black">Apply</a>
                 </li>
                 <li class="nav-item">
                     <a href="about.html" class="nav-link mx-3 fg-black">About</a>
@@ -45,80 +45,74 @@
                 </li>
             </ul>
         </div>
-    </nav>
+    </nav>  <!--END OF NAVBAR-->
 
-    <div class="container py-3">
-        <div class="header mt-4">
-            <h3>Create Account</h3>
-            <hr class="rounded me-6">
+    <div class="form-bg py-5">
+        <div class="container py-3">
+            <div class="header mt-4">
+                <h3 class="fg-black">Create Account</h3>
+                <hr class="rounded me-6">
+            </div>
+            <form id="regform" class="form mb-4">
+                <div class="form-control">
+                    <label for="username">Name</label>
+                    <input type="text" placeholder="John Doe" id="name" value="John Doe"/>
+                    <i class="fa fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                <div class="form-control">
+                    <label for="username">Birthdate</label>
+                    <input type="date" placeholder="" id="birthdate" value="1990-01-01"/>
+                    <i class="fa fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                <div class="form-control">
+                    <label for="username">Contact number</label>
+                    <input type="tel" placeholder="+63" id="contactnum" value="12345"/>
+                    <i class="fa fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                <div class="form-control">
+                    <label for="lastschool">Last School Attended</label>
+                    <input type="text" placeholder="" id="lastschool" value="Sample School"/>
+                    <i class="fa fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                <div class="form-control">
+                    <label for="username">Username</label>
+                    <input type="text" placeholder="" id="username" value="test"/>
+                    <i class="fa fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                <div class="form-control">
+                    <label for="email">Email</label>
+                    <input type="email" placeholder="a@email.com" id="email" value="test@email.com"/>
+                    <i class="fa fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                <div class="form-control">
+                    <label for="password">Password</label>
+                    <input type="password" placeholder="" id="password" value="password"/>
+                    <i class="fa fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                <div class="form-control">
+                    <label for="password2">Re-enter password</label>
+                    <input type="password" placeholder="" id="password2" value="password"/>
+                    <i class="fa fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                <button id="submitReg">Submit</button>
+            </form>
         </div>
-        <form id="form" class="form mb-4">
-            <div class="form-control">
-                <label for="username">Name</label>
-                <input type="text" placeholder="John Doe" id="name"/>
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error message</small>
-            </div>
-            <div class="form-control">
-                <label for="username">Birthdate</label>
-                <input type="date" placeholder="" id="birthdate"/>
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error message</small>
-            </div>
-            <div class="form-control">
-                <label for="username">Contact number</label>
-                <input type="number" placeholder="+63" id="contactnum"/>
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error message</small>
-            </div>
-            <div class="form-control">
-                <label for="lastschool">Last School Attended</label>
-                <input type="text" placeholder="" id="lastschool"/>
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error message</small>
-            </div>
-            <div class="form-control">
-                <label for="username">Username</label>
-                <input type="text" placeholder="" id="username" />
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error message</small>
-            </div>
-            <div class="form-control">
-                <label for="email">Email</label>
-                <input type="email" placeholder="a@email.com" id="email" />
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error message</small>
-            </div>
-            <div class="form-control">
-                <label for="password">Password</label>
-                <input type="password" placeholder="" id="password"/>
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error message</small>
-            </div>
-            <div class="form-control">
-                <label for="password2">Re-enter password</label>
-                <input type="password" placeholder="" id="password2"/>
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error message</small>
-            </div>
-            <button>Submit</button>
-        </form>
-    </div>
+    </div>  <!--END OF REGISTRATION FORM-->
 
     <div class="footer px-3 py-5">
         <h4 class="px-0 py-2 mb-1" style="color: white; text-align: justify; font-weight: bolder;">
             Contact us <br>
         </h4>
         <div class="mx-auto pb-2">
-            <p  style="color: white; text-align: left; text-size-adjust: 125;">
+            <p class="body-text" style="color: white; text-align: left; text-size-adjust: 125;">
                 Keenness Open-Quest University (KOQU) <br>  
                 5342 Quest Lane St., Cubao, Quezon City <br>
                 Tel. No: (+632) 3344-9785
@@ -132,16 +126,14 @@
                 support@keenness.edu 
             </p>
         </div>
-    </div>
+    </div>  <!--END OF FOOTER-->>
 
 	<div class="text-center" style="background-color: black;">
-		<p class="px-3 py-2 mb-0" style="font-size: 12px; color: gray">
+		<p class="body-text py-2 mb-0" style="color: gray;">
 			© Copyright 2024. Keenness Open-Quest University. All rights reserved. | Powered by Student Innovation Hub
 		</p>
-
 	</div>
     
-
     <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
