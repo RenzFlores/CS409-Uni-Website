@@ -1,3 +1,4 @@
+// CONSTANTS
 const loginform = document.getElementById('loginform');
 const regform = document.getElementById('regform');
 const name = document.getElementById('name');
@@ -9,8 +10,10 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
 
+// Array containing user objects
 var userArray = [];
 
+// User object
 var userObject = {
     name: "",
     birthdate: "",
@@ -21,14 +24,18 @@ var userObject = {
     password: ""
 }
 
+// Users from localStorage is retrieved every time a page loads
 loadUsers();
 
+// Event handler for registration form
 try {
     regform.addEventListener('submit', e => {
         e.preventDefault();
     
-        if (checkRegInputs()) {
+        // Validate inputs and add user
+        if (validateRegistration()) {
             addUser();
+            window.alert("User successfully registered!");
         }
     });
 }
@@ -36,15 +43,17 @@ catch(err) {
     ;
 }
 
+// Event handler for login form
 try {
     loginform.addEventListener('submit', e => {
         e.preventDefault();
 
-        if (checkLoginInputs()) {
-            tempUser = authenticateLogin();
+        // Validate inputs and authenticate login attempt
+        if (validateLogin()) {
+            let user = authenticateLogin();
 
-            if (tempUser !== null) {
-                window.alert("Welcome " + (tempUser.name) + "!");
+            if (user !== null) {
+                window.alert("Welcome " + (user.name) + "!");
             } else {
                 window.alert("Incorrect username or password.");
             }
@@ -55,6 +64,8 @@ catch(err) {
     ;
 }
 
+// Add user based on the current values in the registration form. Assumes all inputs are valid
+// so form must be validated first before calling addUser()
 function addUser() {
     const newUser = {
         name: "",
@@ -73,69 +84,73 @@ function addUser() {
     newUser.username = username.value.trim();
     newUser.email = email.value.trim();
     newUser.password = password.value.trim();
-    userArray.push(newUser);
-    saveUsers();
-    console.log("User successfully added.");
+
+    userArray.push(newUser);    // Add user to list of registered users
+    saveUsers();                // Save all data to localStorage
 }
 
+// Load all users from localStorage. Data is parsed into objects and stored in userArray
 function loadUsers() {
     userArray = [];
-    let dataArray = localStorage.getItem("users");
+    let dataString = localStorage.getItem("users");
 
-    if (dataArray !== null) {
-        dataArray = dataArray.split("||");
-        for (let i = 0; i < dataArray.length-1; i++) {
-            console.log(dataArray[i]);
+    // Check if "users" key exists
+    if (dataString !== null) {
+        // Split the string by delimiter and store inside array
+        let dataArray = dataString.split("||");
+
+        // Parse all strings into objects and add to userArray
+        for (let i = 0; i < dataArray.length-1 /* Last index is an empty string */ ; i++) {
             let parsedData = JSON.parse(dataArray[i]);
 
             userArray.push(parsedData);
         }
-        console.log(userArray.length);
     }
 }
 
+// Save all user data from userArray to localStorage. All objects are serialized into JSON and stored as
+// one very long concatenated string inside the "users" key
 function saveUsers() {
     let userString = "";
 
     for (let i = 0; i < userArray.length; i++) {
-        userString = userString.concat(JSON.stringify(userArray[i]) + ("||"));
-        console.log(userString);
+        userString = userString.concat(JSON.stringify(userArray[i]) + ("||")); /* Delimiter is || */
     }
 
     localStorage.setItem("users", userString);
 }
 
+// Authenticate login attempt by checking for all matching records from existing users. Returns an object if
+// a user is found or null if not
 function authenticateLogin() {
+    // Compare if inputted username AND password match a given user's info
     function matchRecords(user) {
-        if (user.username.localeCompare(document.getElementById("username").value) === 0) {
-            console.log("Username matched.");
-        } else { 
-            console.log("Username not found.");
+        if (user.username.localeCompare(document.getElementById("username").value) !== 0) {
             return false;
         }
 
-        if (user.password.localeCompare(document.getElementById("password").value) === 0) {
-            console.log("Password matched.");
-        } else {
-            console.log("Password not found.");
+        if (user.password.localeCompare(document.getElementById("password").value) !== 0) {
             return false;
         }
 
         return true;
     }
 
+    // Check for matching records on every registered user
+    // If found, return the user object
+    // If not, return null
     for (var i = 0; i < userArray.length; i++) {
         if (matchRecords(userArray[i])) {
-            console.log("User found");
             return userArray[i];
         }
     }
-    console.log("User not found");
+
     return null;
 }
 
-function checkRegInputs() {
-	// trim to remove the whitespaces
+// Validate all inputs from the registration form and set for errors accordingly
+function validateRegistration() {
+	// Trim to remove the whitespaces
     const nameValue = name.value.trim();
     const birthdateValue = birthdate.value.trim();
     const contactnumValue = contactnum.value.trim();
@@ -144,8 +159,13 @@ function checkRegInputs() {
 	const emailValue = email.value.trim();
 	const passwordValue = password.value.trim();
 	const password2Value = password2.value.trim();
-    var isValid = true;
+    
+    var isValid = true;     // Flag indicating whether a form is valid or not
 	
+    /*
+     *   If input is invalid, set form to display an error and set isValid to false
+     *   If input is valid, revert form to normal look
+     */
     if(nameValue === '') {
 		setErrorFor(name, 'Required');
         isValid = false;
@@ -208,6 +228,7 @@ function checkRegInputs() {
         revertForm(password2);
     }
 
+    // Check if all inputs passed the validation and return the corresponding truth value
     if (isValid) {
         return true;
     } else {
@@ -215,13 +236,15 @@ function checkRegInputs() {
     }
 }
 
-function checkLoginInputs() {
+// Validate all inputs from the login form and set for errors accordingly
+function validateLogin() {
     const usernameValue = username.value.trim();
 	const passwordValue = password.value.trim();
 
     let isValid = true;
 
     // TODO: Check for matching existing records.
+
     if(usernameValue === '') {
 		setErrorFor(username, 'Username cannot be blank');
         isValid = false;
@@ -243,6 +266,7 @@ function checkLoginInputs() {
     }
 }
 
+// Set input to display error message
 function setErrorFor(input, message) {
 	const formControl = input.parentElement;
 	const small = formControl.querySelector('small');
@@ -250,13 +274,15 @@ function setErrorFor(input, message) {
 	small.innerText = message;
 }
 
+// Remove error message and revert form
 function revertForm(input) {
 	const formControl = input.parentElement;
 	const small = formControl.querySelector("small");
 	formControl.className = "form-control";
 	small.innerText = "";
 }
-	
+
+// Email validation using regex
 function isEmail(email) {
 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }

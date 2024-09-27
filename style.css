@@ -220,14 +220,14 @@ hr.rounded {
 }
 
 /* CUSTOM WIDTHS */
-.w-80, .w-xs-80 { width: 80%!important; }
+.w-res { width: 80%!important; }
 
 /* BREAKPOINTS */
 
 /* XS breakpoint */
 @media (max-width: 575px) {
     /* CUSTOM WIDTHS */
-    .w-80 { width: 95%!important; }
+    .w-res { width: 95%!important; }
     .body-text { font-size: 1.88vh; }
     .h3 { font-size: 1vh; }
     .navbar a { font-size: 2vh }
@@ -243,7 +243,7 @@ hr.rounded {
 /* SM breakpoint */
 @media (min-width: 576px) {
     /* CUSTOM WIDTHS */
-    .w-80 { width: 95%!important; }
+    .w-res { width: 95%!important; }
     .body-text { font-size: 1.88vh; line-height: 2; }
     .navbar a { font-size: 2.2vh }
     .w-100 { height: 66vh; }
@@ -256,7 +256,7 @@ hr.rounded {
 /* MD breakpoint*/
 @media (min-width: 768px) {
     /* CUSTOM WIDTHS */
-    .w-80 { width: 90%!important; }
+    .w-res { width: 90%!important; }
     .body-text { font-size: 2vh; line-height: 2; }
     .navbar a { font-size: 2.5vh }
     .w-100 { height: 75vh; }
@@ -271,7 +271,7 @@ hr.rounded {
     /* CUSTOM WIDTHS */
     .ms-1 { margin-left: 1rem!important; }
     .me-1 { margin-right: 1rem!important; }
-    .w-80 { width: 80%!important; }
+    .w-res { width: 80%!important; }
     .body-text { font-size: 2.2vh; line-height: 2.5; }
     .h3, h3 { font-size: 4vh; }
     .navbar a { font-size: 2.5vh }
