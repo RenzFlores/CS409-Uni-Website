@@ -197,16 +197,37 @@ function validateRegistration() {
     if(usernameValue === '') {
 		setErrorFor(username, 'Required');
         isValid = false;
-	} else {
+	} 
+    // Check if username is unique
+    else if (usernameValue !== '') {
+        for (let i = 0; i < userArray.length; i++) {
+            if (usernameValue.localeCompare(userArray[i].username) === 0) {
+                setErrorFor(username, "Username is already taken");
+                isValid = false;
+                break;
+            }
+        }
+    } else {
         revertForm(username);
     }
 	
 	if(emailValue === '') {
 		setErrorFor(email, 'Required');
         isValid = false;
-	} else if (!isEmail(emailValue)) {
+	} 
+    else if (!isEmail(emailValue)) {
 		setErrorFor(email, 'Not a valid email');
         isValid = false;
+    } 
+    // Check if email is unique
+    else if (isEmail(emailValue)) {
+        for (let i = 0; i < userArray.length; i++) {
+            if (emailValue.localeCompare(userArray[i].email) === 0) {
+                setErrorFor(email, "Email is already taken");
+                isValid = false;
+                break;
+            }
+        }
     } else {
         revertForm(email);
     }
@@ -214,15 +235,36 @@ function validateRegistration() {
 	if(passwordValue === '') {
 		setErrorFor(password, 'Required');
         isValid = false;
-	} else {
-        revertForm(password);
+    } else if (passwordValue !== '') {
+        let status = isValidPass(passwordValue);
+
+        switch (status) {
+            case 1:
+                setErrorFor(password, 'Password must  be minimum of 8 characters');
+                isValid = false;
+                break;
+            case 2:
+                setErrorFor(password, 'Password must contain at least one uppercase letter');
+                isValid = false;
+                break;
+            case 3:
+                setErrorFor(password, 'Password must contain at least one lowercase letter');
+                isValid = false;
+                break;
+            case 4:
+                setErrorFor(password, 'Password must contain at least one number');
+                isValid = false;
+                break;
+            case 5:
+                revertForm(password);
+        }
     }
 	
 	if(password2Value === '') {
 		setErrorFor(password2, 'Required');
         isValid = false;
 	} else if(passwordValue !== password2Value) {
-		setErrorFor(password2, 'Passwords does not match');
+		setErrorFor(password2, 'Password does not match');
         isValid = false;
 	} else {
         revertForm(password2);
@@ -242,8 +284,6 @@ function validateLogin() {
 	const passwordValue = password.value.trim();
 
     let isValid = true;
-
-    // TODO: Check for matching existing records.
 
     if(usernameValue === '') {
 		setErrorFor(username, 'Username cannot be blank');
@@ -285,4 +325,33 @@ function revertForm(input) {
 // Email validation using regex
 function isEmail(email) {
 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+}
+
+// Password validation using regex. Returns an integer indicating error status
+// 1 = Less than 8 characters
+// 2 = No uppercase letter
+// 3 = No lowercase letter
+// 4 = No number
+// 5 = Valid
+function isValidPass(password) {
+    // Minimum 8 characters
+    if (!/^[A-Za-z\d$&+,:;=?@#|'<>.^*()%!-]{8,}$/.test(password)) {
+        return 1;
+    } 
+    // At least one uppercase letter
+    else if (!/^(?=.*?[A-Z])/.test(password)) {
+        return 2;
+    } 
+    // At least one lowercase letter
+    else if (!/^(?=.*?[a-z])/.test(password)) {
+        return 3;
+    }
+    // At least one number
+    else if (!/^(?=.*?[0-9])/.test(password)) {
+        return 4;
+    }
+    // All criterias met
+    else {
+        return 5;
+    }
 }
