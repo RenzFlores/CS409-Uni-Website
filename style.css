@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+@mport url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 
 * {
     font-family: 'Montserrat', sans-serif;
@@ -174,10 +174,6 @@ hr.rounded {
 	border-color: #777;
 }
 
-.form-control.success input {
-	border-color: #2ecc71;
-}
-
 .form-control.error input {
 	border-color: #e74c3c;
 }
@@ -186,7 +182,7 @@ hr.rounded {
 	visibility: hidden;
 	position: absolute;
 	top: 40px;
-	right: 10px;
+	right: 20px;
 }
 
 .form-control.success i.fa-check-circle {
